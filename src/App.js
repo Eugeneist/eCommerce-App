@@ -3,6 +3,7 @@ import { Header } from "./components/Header";
 import { Products } from "./pages/Products";
 import { Product } from "./pages";
 import { NotFound } from "./pages";
+import { Cart } from "./components";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Products />} />
           <Route path="/product/:id" element={<Product />} />
+          <Route path="/cart" element={<Cart />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>

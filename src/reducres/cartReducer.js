@@ -1,4 +1,4 @@
-const cart = [1, 2];
+const cart = [];
 
 const cartReducer = (state = cart, action) => {
   switch (action.type) {

@@ -8,7 +8,7 @@ import Rating from "@mui/material/Rating";
 import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
 
-const ProductCard = ({ image, title, rating, price, product, key }) => {
+const ProductCard = ({ image, title, rating, price, product }) => {
   const dispatch = useDispatch();
   const addProduct = (product) => {
     dispatch(addToCart(product));
