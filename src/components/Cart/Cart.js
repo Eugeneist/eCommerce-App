@@ -1,5 +1,10 @@
 import { useSelector, useDispatch } from "react-redux";
-import { removeFromCart, addToCart } from "../../actions/cartActions";
+import {
+  removeFromCart,
+  addToCart,
+  deleteFromCart,
+  clearCart,
+} from "../../actions/cartActions";
 import { NavLink } from "react-router-dom";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -26,6 +31,14 @@ const Cart = () => {
     dispatch(removeFromCart(product));
   };
 
+  const deleteProduct = (product) => {
+    dispatch(deleteFromCart(product));
+  };
+
+  const clearAllCart = (product) => {
+    dispatch(clearCart(product));
+  };
+
   const calculateTotal = state
     .reduce((acc, product) => acc + product.amount * product.price, 0)
     .toFixed(2);
@@ -44,6 +57,13 @@ const Cart = () => {
             You cart is empty!
           </Alert>
         </Stack>
+        <img
+          style={{ margin: "10px" }}
+          width="20%"
+          height="auto"
+          src={`https://www.pngmart.com/files/7/Cart-PNG-Clipart.png`}
+          alt="cartimage"
+        ></img>
       </TableContainer>
     );
   }
@@ -116,7 +136,7 @@ const Cart = () => {
               <TableCell align="right">
                 <Button
                   color="secondary"
-                  onClick={() => removeProduct(product)}
+                  onClick={() => deleteProduct(product)}
                 >
                   <ClearIcon />
                 </Button>
@@ -138,11 +158,22 @@ const Cart = () => {
         component="div"
       >
         <box>
-          <NavLink to="/" style={{ textDecoration: "none", color: "fff" }}>
+          <NavLink
+            to="/"
+            style={{ textDecoration: "none", color: "fff", margin: "20px" }}
+          >
             <Button color="primary" variant="contained" sx={{ width: "120px" }}>
               Back
             </Button>
           </NavLink>
+          <Button
+            color="primary"
+            variant="contained"
+            onClick={() => clearAllCart()}
+            sx={{ width: "120px", margin: "10px" }}
+          >
+            Clear Cart
+          </Button>
         </box>
         <box>
           <span style={{ fontSize: "20px" }}>Total:</span> ${calculateTotal}

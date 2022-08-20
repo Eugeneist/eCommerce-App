@@ -1,8 +1,15 @@
+import {
+  ADD_TO_CART,
+  REMOVE_FROM_CART,
+  DELETE_FROM_CART,
+  CLEAR_CART,
+} from "../actionTypes/cartTypes";
+
 const cart = [];
 
 const cartReducer = (state = cart, action) => {
   switch (action.type) {
-    case "ADD_TO_CART": {
+    case ADD_TO_CART: {
       const product = action.payload;
 
       const isProductExist = state.find((item) => item.id === product.id);
@@ -23,7 +30,7 @@ const cartReducer = (state = cart, action) => {
       }
     }
 
-    case "REMOVE_FROM_CART":
+    case REMOVE_FROM_CART: {
       const product = action.payload;
 
       const isProductExistDel = state.find((item) => item.id === product.id);
@@ -35,6 +42,23 @@ const cartReducer = (state = cart, action) => {
           item.id === product.id ? { ...item, amount: item.amount - 1 } : item
         );
       }
+    }
+
+    case DELETE_FROM_CART:
+      {
+        const product = action.payload;
+
+        const isProductExistDel = state.find((item) => item.id === product.id);
+
+        if (isProductExistDel) {
+          return state.filter((item) => item.id !== isProductExistDel.id);
+        }
+      }
+      break;
+
+    case CLEAR_CART: {
+      return (state = []);
+    }
 
     default: {
       return state;

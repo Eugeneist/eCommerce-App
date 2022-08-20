@@ -1,8 +1,13 @@
+import {
+  ADD_TO_FAVORITE,
+  REMOVE_FROM_FAVORITE,
+} from "../actionTypes/favoriteTypes";
+
 const favoriteList = [];
 
 const favoriteReducer = (state = favoriteList, action) => {
   switch (action.type) {
-    case "ADD_TO_FAVORITE": {
+    case ADD_TO_FAVORITE: {
       const product = action.payload;
 
       const isProductExist = state.find((item) => item.id === product.id);
@@ -21,7 +26,7 @@ const favoriteReducer = (state = favoriteList, action) => {
       }
     }
 
-    case "REMOVE_FROM_FAVORITE":
+    case REMOVE_FROM_FAVORITE:
       const product = action.payload;
 
       const isProductExistDel = state.find((item) => item.id === product.id);

@@ -17,6 +17,7 @@ const Product = () => {
   const { id } = useParams();
 
   const dispatch = useDispatch();
+
   const addProduct = (product) => {
     dispatch(addToCart(product));
   };

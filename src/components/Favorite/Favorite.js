@@ -24,6 +24,13 @@ const Favorite = () => {
             You don't have favorite products!
           </Alert>
         </Stack>
+        <img
+          style={{ margin: "10px" }}
+          width="20%"
+          height="auto"
+          src={`https://freepikpsd.com/file/2019/10/favourite-png-3-Transparent-Images.png`}
+          alt="cartimage"
+        ></img>
       </Container>
     );
   }
