@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router";
 import { axios } from "../../helpers";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../actions/cartActions";
+import { addToFavorite } from "../../actions/favoriteActions";
 import CircularProgress from "@mui/material/CircularProgress";
 import Stack from "@mui/material/Stack";
 import Alert from "@mui/material/Alert";
@@ -18,6 +19,10 @@ const Product = () => {
   const dispatch = useDispatch();
   const addProduct = (product) => {
     dispatch(addToCart(product));
+  };
+
+  const addFavorite = (product) => {
+    dispatch(addToFavorite(product));
   };
 
   const navigate = useNavigate();
@@ -133,22 +138,47 @@ const Product = () => {
           >
             {product.price}$
           </Typography>
-          <Button
-            onClick={() => addProduct(product)}
+          <Box
             sx={{
-              backgroundColor: "#14213d",
-              "&:hover": {
-                backgroundColor: "#fca311",
-                color: "#000",
-                opacity: [0.9, 0.8, 0.7],
-              },
+              display: "flex",
+              padding: "10px 10px 10px 10px",
             }}
-            variant="contained"
-            color="success"
-            size="medium"
           >
-            Add to Cart
-          </Button>
+            <Button
+              onClick={() => addProduct(product)}
+              sx={{
+                backgroundColor: "#14213d",
+                margin: "15px",
+                "&:hover": {
+                  backgroundColor: "#fca311",
+                  color: "#000",
+                  opacity: [0.9, 0.8, 0.7],
+                },
+              }}
+              variant="contained"
+              color="success"
+              size="medium"
+            >
+              Add to Cart
+            </Button>
+            <Button
+              onClick={() => addFavorite(product)}
+              sx={{
+                backgroundColor: "#14213d",
+                margin: "15px",
+                "&:hover": {
+                  backgroundColor: "#fca311",
+                  color: "#000",
+                  opacity: [0.9, 0.8, 0.7],
+                },
+              }}
+              variant="contained"
+              color="success"
+              size="medium"
+            >
+              Add to Favorite
+            </Button>
+          </Box>
         </Box>
       </Box>
       <Box

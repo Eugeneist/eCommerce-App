@@ -11,7 +11,7 @@ import InputBase from "@mui/material/InputBase";
 import Badge from "@mui/material/Badge";
 // import MenuItem from "@mui/material/MenuItem";
 // import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
+// import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import LocalMallIcon from "@mui/icons-material/LocalMall";
 import ShoppingBasketOutlinedIcon from "@mui/icons-material/ShoppingBasketOutlined";
@@ -59,7 +59,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 const Header = () => {
   const state = useSelector((state) => state.cartReducer);
-  console.log(state);
+  const favorite = useSelector((state) => state.favoriteReducer);
 
   // const menuId = "primary-search-account-menu";
   // const renderMenu = (
@@ -127,15 +127,6 @@ const Header = () => {
       >
         <AppBar position="sticky" sx={{ backgroundColor: "#14213d" }}>
           <Toolbar>
-            <IconButton
-              size="large"
-              edge="start"
-              color="inherit"
-              aria-label="open drawer"
-              sx={{ mr: 2 }}
-            >
-              <MenuIcon />
-            </IconButton>
             <NavLink to="/">
               <LocalMallIcon />
             </NavLink>
@@ -156,7 +147,7 @@ const Header = () => {
                   aria-label="show 4 new mails"
                   color="inherit"
                 >
-                  <Badge badgeContent={4} color="error">
+                  <Badge badgeContent={favorite?.length} color="error">
                     <FavoriteBorderOutlinedIcon />
                   </Badge>
                 </IconButton>

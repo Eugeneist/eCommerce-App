@@ -4,6 +4,7 @@ import { Products } from "./pages/Products";
 import { Product } from "./pages";
 import { NotFound } from "./pages";
 import { Cart } from "./components";
+import { Favorite } from "./components";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<Products />} />
           <Route path="/product/:id" element={<Product />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/favorite" element={<Favorite />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
