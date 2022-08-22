@@ -28,8 +28,8 @@ const Favorite = () => {
           style={{ margin: "10px" }}
           width="20%"
           height="auto"
-          src={`https://freepikpsd.com/file/2019/10/favourite-png-3-Transparent-Images.png`}
-          alt="cartimage"
+          src={`https://i.ibb.co/dMQTRjJ/favourite-png.png`}
+          alt="favoriteimage"
         ></img>
       </Container>
     );

@@ -61,7 +61,7 @@ const Cart = () => {
           style={{ margin: "10px" }}
           width="20%"
           height="auto"
-          src={`https://www.pngmart.com/files/7/Cart-PNG-Clipart.png`}
+          src={`https://i.ibb.co/G2JpX0p/Cart-PNG.png`}
           alt="cartimage"
         ></img>
       </TableContainer>
@@ -70,7 +70,7 @@ const Cart = () => {
 
   return (
     <TableContainer
-      sx={{ width: "1200px", height: "100vh", margin: "auto" }}
+      sx={{ width: "1200px", height: "100%", margin: "auto" }}
       component={Paper}
     >
       <Table size="small" aria-label="cart table">
@@ -121,11 +121,21 @@ const Cart = () => {
                 {product.title}
               </TableCell>
               <TableCell align="center">
-                <Button disableElevation onClick={() => removeProduct(product)}>
+                <Button
+                  sx={{ minWidth: "30px" }}
+                  size="small"
+                  disableElevation
+                  onClick={() => removeProduct(product)}
+                >
                   —
                 </Button>
                 {product.amount}
-                <Button disableElevation onClick={() => addProduct(product)}>
+                <Button
+                  sx={{ minWidth: "30px" }}
+                  size="small"
+                  disableElevation
+                  onClick={() => addProduct(product)}
+                >
                   +
                 </Button>
               </TableCell>

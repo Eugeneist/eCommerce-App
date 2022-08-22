@@ -1,5 +1,6 @@
 import "./App.css";
 import { Header } from "./components/Header";
+import { Footer } from "./components";
 import { Products } from "./pages/Products";
 import { Product } from "./pages";
 import { NotFound } from "./pages";
@@ -19,6 +20,7 @@ function App() {
           <Route path="/favorite" element={<Favorite />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <Footer />
       </div>
     </>
   );

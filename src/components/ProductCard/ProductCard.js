@@ -26,6 +26,7 @@ const ProductCard = ({ image, title, rating, price, product }) => {
     dispatch(addToCart(product));
   };
 
+  const [ratingValue, setRatingValue] = useState(rating);
   const [favoriteProduct, setFavoriteProduct] = useState(false);
 
   const addFavoriteProduct = (product) => {
@@ -96,10 +97,17 @@ const ProductCard = ({ image, title, rating, price, product }) => {
             <Typography gutterBottom variant="subtitle1" component="div">
               {title}
             </Typography>
-            <Rating name="read-only" value={rating} readOnly />
           </CardContent>
         </CardActionArea>
       </NavLink>
+      <Rating
+        name="simple-controlled"
+        value={ratingValue}
+        onChange={(event, value) => {
+          let newValue = (value + ratingValue) / 2;
+          setRatingValue(newValue);
+        }}
+      />
       <CardActions
         sx={{
           display: "flex",

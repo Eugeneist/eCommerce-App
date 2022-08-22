@@ -128,7 +128,15 @@ const Header = () => {
         <AppBar position="sticky" sx={{ backgroundColor: "#14213d" }}>
           <Toolbar>
             <NavLink to="/">
-              <LocalMallIcon />
+              <LocalMallIcon
+                sx={{
+                  color: "#fff",
+                  "&:hover": {
+                    color: "#fca311",
+                    opacity: [0.9, 0.8, 0.7],
+                  },
+                }}
+              />
             </NavLink>
             <Search>
               <SearchIconWrapper>
@@ -148,7 +156,15 @@ const Header = () => {
                   color="inherit"
                 >
                   <Badge badgeContent={favorite?.length} color="error">
-                    <FavoriteBorderOutlinedIcon />
+                    <FavoriteBorderOutlinedIcon
+                      sx={{
+                        color: "#fff",
+                        "&:hover": {
+                          color: "#fca311",
+                          opacity: [0.9, 0.8, 0.7],
+                        },
+                      }}
+                    />
                   </Badge>
                 </IconButton>
               </NavLink>
@@ -159,7 +175,15 @@ const Header = () => {
                   color="inherit"
                 >
                   <Badge badgeContent={state?.length} color="error">
-                    <ShoppingBasketOutlinedIcon />
+                    <ShoppingBasketOutlinedIcon
+                      sx={{
+                        color: "#fff",
+                        "&:hover": {
+                          color: "#fca311",
+                          opacity: [0.9, 0.8, 0.7],
+                        },
+                      }}
+                    />
                   </Badge>
                 </IconButton>
               </NavLink>

@@ -40,16 +40,28 @@ const Products = () => {
   }, []);
 
   if (loading) {
-    return <LinearProgress />;
+    return (
+      <Container
+        sx={{ height: "100vh", padding: "10px", backgroundColor: "#e5e5e5" }}
+        maxWidth="xl"
+      >
+        <LinearProgress />
+      </Container>
+    );
   }
 
   if (error) {
     return (
-      <Stack sx={{ width: "60%", margin: "auto" }} spacing={2}>
-        <Alert variant="filled" severity="error">
-          There was an error loading data!
-        </Alert>
-      </Stack>
+      <Container
+        sx={{ height: "100vh", padding: "10px", backgroundColor: "#e5e5e5" }}
+        maxWidth="xl"
+      >
+        <Stack sx={{ width: "60%", margin: "auto" }} spacing={2}>
+          <Alert variant="filled" severity="error">
+            There was an error loading data!
+          </Alert>
+        </Stack>
+      </Container>
     );
   }
 
@@ -60,112 +72,114 @@ const Products = () => {
     >
       <ImageCarousel />
       <Box sx={{ display: "flex" }}>
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            padding: "5px 20px 5px 0",
-            position: "sticky",
-            top: "50px",
-          }}
-        >
-          <Typography
-            sx={{
-              margin: "0 0 15px",
-              color: "#14213d",
-              textTransform: "uppercase",
-            }}
-            gutterBottom
-            variant="h5"
-            component="div"
-          >
-            Categories:
-          </Typography>
-          <Button
-            onClick={() => setFilter(products)}
+        <Box sx={{ position: "reletive" }}>
+          <Box
             sx={{
               display: "flex",
-              justifyContent: "left",
-              padding: "10px 100px 10px 20px",
-              color: "#14213d",
+              flexDirection: "column",
+              padding: "5px 20px 5px 0",
+              position: "sticky",
+              top: "70px",
             }}
           >
-            All
-          </Button>
-          <Divider />
-          <Button
-            onClick={() => filterProducts("smartphones")}
-            sx={{
-              display: "flex",
-              justifyContent: "left",
-              padding: "10px 100px 10px 20px",
-              color: "#14213d",
-            }}
-          >
-            Smartphones
-          </Button>
-          <Divider />
-          <Button
-            onClick={() => filterProducts("laptops")}
-            sx={{
-              display: "flex",
-              justifyContent: "left",
-              padding: "10px 100px 10px 20px",
-              color: "#14213d",
-            }}
-          >
-            Laptops
-          </Button>
-          <Divider />
-          <Button
-            onClick={() => filterProducts("fragrances")}
-            sx={{
-              display: "flex",
-              justifyContent: "left",
-              padding: "10px 100px 10px 20px",
-              color: "#14213d",
-            }}
-          >
-            Fragrances
-          </Button>
-          <Divider />
-          <Button
-            onClick={() => filterProducts("skincare")}
-            sx={{
-              display: "flex",
-              justifyContent: "left",
-              padding: "10px 100px 10px 20px",
+            <Typography
+              sx={{
+                margin: "0 0 15px",
+                color: "#14213d",
+                textTransform: "uppercase",
+              }}
+              gutterBottom
+              variant="h5"
+              component="div"
+            >
+              Categories:
+            </Typography>
+            <Button
+              onClick={() => setFilter(products)}
+              sx={{
+                display: "flex",
+                justifyContent: "left",
+                padding: "10px 100px 10px 20px",
+                color: "#14213d",
+              }}
+            >
+              All
+            </Button>
+            <Divider />
+            <Button
+              onClick={() => filterProducts("smartphones")}
+              sx={{
+                display: "flex",
+                justifyContent: "left",
+                padding: "10px 100px 10px 20px",
+                color: "#14213d",
+              }}
+            >
+              Smartphones
+            </Button>
+            <Divider />
+            <Button
+              onClick={() => filterProducts("laptops")}
+              sx={{
+                display: "flex",
+                justifyContent: "left",
+                padding: "10px 100px 10px 20px",
+                color: "#14213d",
+              }}
+            >
+              Laptops
+            </Button>
+            <Divider />
+            <Button
+              onClick={() => filterProducts("fragrances")}
+              sx={{
+                display: "flex",
+                justifyContent: "left",
+                padding: "10px 100px 10px 20px",
+                color: "#14213d",
+              }}
+            >
+              Fragrances
+            </Button>
+            <Divider />
+            <Button
+              onClick={() => filterProducts("skincare")}
+              sx={{
+                display: "flex",
+                justifyContent: "left",
+                padding: "10px 100px 10px 20px",
 
-              color: "#14213d",
-            }}
-          >
-            Skin Care
-          </Button>
-          <Divider />
-          <Button
-            onClick={() => filterProducts("groceries")}
-            sx={{
-              display: "flex",
-              justifyContent: "left",
-              padding: "10px 100px 10px 20px",
-              color: "#14213d",
-            }}
-          >
-            Groceries
-          </Button>
-          <Divider />
-          <Button
-            onClick={() => filterProducts("home-decoration")}
-            sx={{
-              display: "flex",
-              justifyContent: "left",
-              padding: "10px 100px 10px 20px",
-              color: "#14213d",
-            }}
-          >
-            Decoration
-          </Button>
-          <Divider />
+                color: "#14213d",
+              }}
+            >
+              Skin Care
+            </Button>
+            <Divider />
+            <Button
+              onClick={() => filterProducts("groceries")}
+              sx={{
+                display: "flex",
+                justifyContent: "left",
+                padding: "10px 100px 10px 20px",
+                color: "#14213d",
+              }}
+            >
+              Groceries
+            </Button>
+            <Divider />
+            <Button
+              onClick={() => filterProducts("home-decoration")}
+              sx={{
+                display: "flex",
+                justifyContent: "left",
+                padding: "10px 100px 10px 20px",
+                color: "#14213d",
+              }}
+            >
+              Decoration
+            </Button>
+            <Divider />
+          </Box>
         </Box>
         <Grid
           container

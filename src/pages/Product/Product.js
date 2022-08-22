@@ -50,23 +50,34 @@ const Product = () => {
   }, [id]);
 
   if (loading) {
-    return <CircularProgress />;
+    return (
+      <Container
+        sx={{ height: "100vh", padding: "10px", backgroundColor: "#e5e5e5" }}
+        maxWidth="xl"
+      >
+        <CircularProgress />
+      </Container>
+    );
   }
 
   if (error) {
     return (
-      <Stack sx={{ width: "60%", margin: "auto" }} spacing={2}>
-        <Alert variant="filled" severity="error">
-          There was an error loading data!
-        </Alert>
-      </Stack>
+      <Container
+        sx={{ height: "100vh", padding: "10px", backgroundColor: "#e5e5e5" }}
+        maxWidth="xl"
+      >
+        <Stack sx={{ width: "60%", margin: "auto" }} spacing={2}>
+          <Alert variant="filled" severity="error">
+            There was an error loading data!
+          </Alert>
+        </Stack>
+      </Container>
     );
   }
 
   return (
     <Container
       sx={{
-        width: "100vw",
         height: "100%",
         backgroundColor: "#e5e5e5",
         textAlign: "left",
