@@ -26,10 +26,10 @@ const Products = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`/products`)
+      .get(`/products?skip=0&limit=100`)
       .then((data) => {
-        setProducts(data.products);
-        setFilter(data.products);
+        setProducts((prevProducts) => [...prevProducts, ...data.products]);
+        setFilter((prevProducts) => [...prevProducts, ...data.products]);
       })
       .catch((err) => {
         setError(err);
@@ -71,15 +71,15 @@ const Products = () => {
       maxWidth="xl"
     >
       <ImageCarousel />
-      <Box sx={{ display: "flex" }}>
+      <Box sx={{ display: "flex", paddingBottom: "30px" }}>
         <Box sx={{ position: "reletive" }}>
           <Box
             sx={{
               display: "flex",
               flexDirection: "column",
               padding: "5px 20px 5px 0",
-              position: "sticky",
-              top: "70px",
+              // position: "sticky",
+              // top: "70px",
             }}
           >
             <Typography
@@ -177,6 +177,174 @@ const Products = () => {
               }}
             >
               Decoration
+            </Button>
+            <Divider />
+            <Button
+              onClick={() => filterProducts("furniture")}
+              sx={{
+                display: "flex",
+                justifyContent: "left",
+                padding: "10px 100px 10px 20px",
+                color: "#14213d",
+              }}
+            >
+              Furniture
+            </Button>
+            <Divider />
+            <Button
+              onClick={() => filterProducts("tops")}
+              sx={{
+                display: "flex",
+                justifyContent: "left",
+                padding: "10px 100px 10px 20px",
+                color: "#14213d",
+              }}
+            >
+              Tops
+            </Button>
+            <Divider />
+            <Button
+              onClick={() => filterProducts("womens-dresses")}
+              sx={{
+                display: "flex",
+                justifyContent: "left",
+                padding: "10px 100px 10px 20px",
+                color: "#14213d",
+              }}
+            >
+              W-s Dresses
+            </Button>
+            <Divider />
+            <Button
+              onClick={() => filterProducts("womens-shoes")}
+              sx={{
+                display: "flex",
+                justifyContent: "left",
+                padding: "10px 100px 10px 20px",
+                color: "#14213d",
+              }}
+            >
+              W-s Shoes
+            </Button>
+            <Divider />
+            <Button
+              onClick={() => filterProducts("mens-shirts")}
+              sx={{
+                display: "flex",
+                justifyContent: "left",
+                padding: "10px 100px 10px 20px",
+                color: "#14213d",
+              }}
+            >
+              M-s Shirts
+            </Button>
+            <Divider />
+            <Button
+              onClick={() => filterProducts("mens-shoes")}
+              sx={{
+                display: "flex",
+                justifyContent: "left",
+                padding: "10px 100px 10px 20px",
+                color: "#14213d",
+              }}
+            >
+              M-s Shoes
+            </Button>
+            <Divider />
+            <Button
+              onClick={() => filterProducts("mens-watches")}
+              sx={{
+                display: "flex",
+                justifyContent: "left",
+                padding: "10px 100px 10px 20px",
+                color: "#14213d",
+              }}
+            >
+              M-s Watches
+            </Button>
+            <Divider />
+            <Button
+              onClick={() => filterProducts("womens-watches")}
+              sx={{
+                display: "flex",
+                justifyContent: "left",
+                padding: "10px 100px 10px 20px",
+                color: "#14213d",
+              }}
+            >
+              W-s Watches
+            </Button>
+            <Divider />
+            <Button
+              onClick={() => filterProducts("womens-bags")}
+              sx={{
+                display: "flex",
+                justifyContent: "left",
+                padding: "10px 100px 10px 20px",
+                color: "#14213d",
+              }}
+            >
+              W-s Bags
+            </Button>
+            <Divider />
+            <Button
+              onClick={() => filterProducts("womens-jewellery")}
+              sx={{
+                display: "flex",
+                justifyContent: "left",
+                padding: "10px 100px 10px 20px",
+                color: "#14213d",
+              }}
+            >
+              Jewellery
+            </Button>
+            <Divider />
+            <Button
+              onClick={() => filterProducts("sunglasses")}
+              sx={{
+                display: "flex",
+                justifyContent: "left",
+                padding: "10px 100px 10px 20px",
+                color: "#14213d",
+              }}
+            >
+              Sunglasses
+            </Button>
+            <Divider />
+            <Button
+              onClick={() => filterProducts("automotive")}
+              sx={{
+                display: "flex",
+                justifyContent: "left",
+                padding: "10px 100px 10px 20px",
+                color: "#14213d",
+              }}
+            >
+              Automotive
+            </Button>
+            <Divider />
+            <Button
+              onClick={() => filterProducts("motorcycle")}
+              sx={{
+                display: "flex",
+                justifyContent: "left",
+                padding: "10px 100px 10px 20px",
+                color: "#14213d",
+              }}
+            >
+              Motorcycles
+            </Button>
+            <Divider />
+            <Button
+              onClick={() => filterProducts("lighting")}
+              sx={{
+                display: "flex",
+                justifyContent: "left",
+                padding: "10px 100px 10px 20px",
+                color: "#14213d",
+              }}
+            >
+              Lighting
             </Button>
             <Divider />
           </Box>

@@ -15,18 +15,6 @@ const ImageCarousel = () => {
     },
   ];
 
-  // const banners = [
-  //   {
-  //     imgPath: "https://i.ibb.co/cvrGJxv/2.jpg",
-  //   },
-  //   {
-  //     imgPath: "https://i.ibb.co/BG1x1Mr/3.jpg",
-  //   },
-  //   {
-  //     imgPath: "https://i.ibb.co/6yTDqLJ/4.jpg",
-  //   },
-  // ];
-
   return (
     <Carousel
       sx={{
