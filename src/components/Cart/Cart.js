@@ -17,7 +17,9 @@ import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 import Alert from "@mui/material/Alert";
 import Typography from "@mui/material/Typography";
+import Grid from "@mui/material/Grid";
 import ClearIcon from "@mui/icons-material/Clear";
+import { DialogWindow } from "../DialogWindow";
 
 const Cart = () => {
   const state = useSelector((state) => state.cartReducer);
@@ -67,6 +69,14 @@ const Cart = () => {
       </TableContainer>
     );
   }
+
+  const products = state?.map((product) => [
+    {
+      product: product.title,
+      amount: product.amount,
+      price: product.price,
+    },
+  ]);
 
   return (
     <TableContainer
@@ -172,7 +182,20 @@ const Cart = () => {
             to="/"
             style={{ textDecoration: "none", color: "fff", margin: "20px" }}
           >
-            <Button color="primary" variant="contained" sx={{ width: "120px" }}>
+            <Button
+              color="primary"
+              variant="contained"
+              sx={{
+                width: "120px",
+                backgroundColor: "#14213d",
+                textDecoration: "none",
+                "&:hover": {
+                  backgroundColor: "#fca311",
+                  color: "#000",
+                  opacity: [0.9, 0.8, 0.7],
+                },
+              }}
+            >
               Back
             </Button>
           </NavLink>
@@ -180,14 +203,41 @@ const Cart = () => {
             color="primary"
             variant="contained"
             onClick={() => clearAllCart()}
-            sx={{ width: "120px", margin: "10px" }}
+            sx={{
+              width: "120px",
+              margin: "10px",
+              backgroundColor: "#14213d",
+              textDecoration: "none",
+              "&:hover": {
+                backgroundColor: "#fca311",
+                color: "#000",
+                opacity: [0.9, 0.8, 0.7],
+              },
+            }}
           >
             Clear Cart
           </Button>
         </box>
-        <box>
-          <span style={{ fontSize: "20px" }}>Total:</span> ${calculateTotal}
-        </box>
+        <Grid
+          sx={{
+            textAlign: "center",
+            padding: "20px",
+            border: "1px solid #e5e5e5",
+            borderRadius: "25px",
+            backgroundColor: "#e5e5e5",
+          }}
+        >
+          <Grid>
+            <span style={{ fontSize: "20px" }}>Total:</span> ${calculateTotal}
+          </Grid>
+          <Grid>
+            <DialogWindow
+              products={products}
+              totalPrice={calculateTotal}
+              clearCart={() => clearAllCart()}
+            />
+          </Grid>
+        </Grid>
       </Typography>
     </TableContainer>
   );

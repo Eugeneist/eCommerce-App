@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import PropTypes from "prop-types";
 import { addToCart } from "../../actions/cartActions";
 import {
   addToFavorite,
@@ -164,6 +165,14 @@ const ProductCard = ({ image, title, rating, price, product }) => {
       </CardActions>
     </Card>
   );
+};
+
+ProductCard.propTypes = {
+  image: PropTypes.string,
+  title: PropTypes.string,
+  rating: PropTypes.number,
+  price: PropTypes.number,
+  product: PropTypes.object,
 };
 
 export default ProductCard;

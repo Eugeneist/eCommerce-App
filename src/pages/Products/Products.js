@@ -72,7 +72,7 @@ const Products = () => {
     >
       <ImageCarousel />
       <Box sx={{ display: "flex", paddingBottom: "30px" }}>
-        <Box sx={{ position: "reletive" }}>
+        <Box sx={{ position: "relative" }}>
           <Box
             sx={{
               display: "flex",
