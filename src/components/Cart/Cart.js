@@ -48,7 +48,14 @@ const Cart = () => {
   if (state.length === 0) {
     return (
       <TableContainer
-        sx={{ width: "1200px", height: "100vh", margin: "auto" }}
+        sx={{
+          minHeight: "100%",
+          margin: "auto",
+          paddingBottom: "80px",
+          "@media (max-width: 900px)": {
+            width: "500px",
+          },
+        }}
         component={Paper}
       >
         <Stack
@@ -80,12 +87,27 @@ const Cart = () => {
 
   return (
     <TableContainer
-      sx={{ width: "1200px", height: "100%", margin: "auto" }}
+      sx={{
+        minHeight: "100%",
+        margin: "auto",
+        "@media (max-width: 900px)": {
+          maxWidth: "500px",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        },
+      }}
       component={Paper}
     >
       <Table size="small" aria-label="cart table">
         <TableHead>
-          <TableRow>
+          <TableRow
+            sx={{
+              "@media (max-width: 900px)": {
+                display: "none",
+              },
+            }}
+          >
             <TableCell sx={{ textAlign: "center", fontWeight: "bold" }}>
               Product
             </TableCell>
@@ -112,7 +134,15 @@ const Cart = () => {
         </TableHead>
         <TableBody>
           {state?.map((product) => (
-            <TableRow key={product.id}>
+            <TableRow
+              sx={{
+                "@media (max-width: 900px)": {
+                  display: "flex",
+                  flexDirection: "column",
+                },
+              }}
+              key={product.id}
+            >
               <TableCell
                 sx={{
                   display: "flex",
@@ -157,6 +187,14 @@ const Cart = () => {
                 <Button
                   color="secondary"
                   onClick={() => deleteProduct(product)}
+                  sx={{
+                    color: "#14213d",
+                    textDecoration: "none",
+                    "&:hover": {
+                      color: "#fca311",
+                      opacity: [0.9, 0.8, 0.7],
+                    },
+                  }}
                 >
                   <ClearIcon />
                 </Button>
@@ -172,6 +210,11 @@ const Cart = () => {
           padding: "30px 100px 30px 30px",
           display: "flex",
           justifyContent: "space-between",
+          "@media (max-width: 900px)": {
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          },
         }}
         gutterBottom
         variant="h5"
@@ -186,7 +229,7 @@ const Cart = () => {
               color="primary"
               variant="contained"
               sx={{
-                width: "120px",
+                minWidth: "120px",
                 backgroundColor: "#14213d",
                 textDecoration: "none",
                 "&:hover": {
@@ -204,7 +247,7 @@ const Cart = () => {
             variant="contained"
             onClick={() => clearAllCart()}
             sx={{
-              width: "120px",
+              minWidth: "150px",
               margin: "10px",
               backgroundColor: "#14213d",
               textDecoration: "none",
@@ -225,6 +268,11 @@ const Cart = () => {
             border: "1px solid #e5e5e5",
             borderRadius: "25px",
             backgroundColor: "#e5e5e5",
+            "@media (max-width: 900px)": {
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            },
           }}
         >
           <Grid>

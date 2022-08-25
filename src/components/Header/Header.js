@@ -1,6 +1,5 @@
 import * as React from "react";
 import { styled, alpha } from "@mui/material/styles";
-// import { cartReducer } from "../../reducres";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import AppBar from "@mui/material/AppBar";
@@ -9,14 +8,10 @@ import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import InputBase from "@mui/material/InputBase";
 import Badge from "@mui/material/Badge";
-// import MenuItem from "@mui/material/MenuItem";
-// import Menu from "@mui/material/Menu";
-// import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import LocalMallIcon from "@mui/icons-material/LocalMall";
 import ShoppingBasketOutlinedIcon from "@mui/icons-material/ShoppingBasketOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
-import MoreIcon from "@mui/icons-material/MoreVert";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -61,59 +56,6 @@ const Header = () => {
   const state = useSelector((state) => state.cartReducer);
   const favorite = useSelector((state) => state.favoriteReducer);
 
-  // const menuId = "primary-search-account-menu";
-  // const renderMenu = (
-  //   <Menu
-  //     anchorOrigin={{
-  //       vertical: "top",
-  //       horizontal: "right",
-  //     }}
-  //     id={menuId}
-  //     keepMounted
-  //     transformOrigin={{
-  //       vertical: "top",
-  //       horizontal: "right",
-  //     }}
-  //   ></Menu>
-  // );
-
-  // const mobileMenuId = "primary-search-account-menu-mobile";
-  // const renderMobileMenu = (
-  //   <Menu
-  //     anchorOrigin={{
-  //       vertical: "top",
-  //       horizontal: "right",
-  //     }}
-  //     id={mobileMenuId}
-  //     keepMounted
-  //     transformOrigin={{
-  //       vertical: "top",
-  //       horizontal: "right",
-  //     }}
-  //   >
-  //     <MenuItem>
-  //       <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-  //         <Badge badgeContent={4} color="error">
-  //           <FavoriteBorderOutlinedIcon />
-  //         </Badge>
-  //       </IconButton>
-  //       <p>Favorite</p>
-  //     </MenuItem>
-  //     <MenuItem>
-  //       <IconButton
-  //         size="large"
-  //         aria-label="show 17 new notifications"
-  //         color="inherit"
-  //       >
-  //         <Badge badgeContent={state.length} color="error">
-  //           <ShoppingBasketOutlinedIcon />
-  //         </Badge>
-  //       </IconButton>
-  //       <p>Card</p>
-  //     </MenuItem>
-  //   </Menu>
-  // );
-
   return (
     <>
       <Box
@@ -125,7 +67,10 @@ const Header = () => {
           zIndex: "9999",
         }}
       >
-        <AppBar position="sticky" sx={{ backgroundColor: "#14213d" }}>
+        <AppBar
+          position="sticky"
+          sx={{ backgroundColor: "#14213d", paddingRight: "10px" }}
+        >
           <Toolbar>
             <NavLink to="/">
               <LocalMallIcon
@@ -138,7 +83,7 @@ const Header = () => {
                 }}
               />
             </NavLink>
-            <Search>
+            <Search sx={{ marginLeft: "10px" }}>
               <SearchIconWrapper>
                 <SearchIcon />
               </SearchIconWrapper>
@@ -148,13 +93,9 @@ const Header = () => {
               />
             </Search>
             <Box sx={{ flexGrow: 1 }} />
-            <Box sx={{ display: { xs: "none", md: "flex" } }}>
+            <Box sx={{ display: { xs: "flex", md: "flex" } }}>
               <NavLink to="/favorite">
-                <IconButton
-                  size="large"
-                  aria-label="show 4 new mails"
-                  color="inherit"
-                >
+                <IconButton size="large" color="inherit">
                   <Badge badgeContent={favorite?.length} color="error">
                     <FavoriteBorderOutlinedIcon
                       sx={{
@@ -169,11 +110,7 @@ const Header = () => {
                 </IconButton>
               </NavLink>
               <NavLink to="/cart" sx={{ textDecoration: "none", color: "fff" }}>
-                <IconButton
-                  size="large"
-                  aria-label="show 17 new notifications"
-                  color="inherit"
-                >
+                <IconButton size="large" color="inherit">
                   <Badge badgeContent={state?.length} color="error">
                     <ShoppingBasketOutlinedIcon
                       sx={{
@@ -188,21 +125,8 @@ const Header = () => {
                 </IconButton>
               </NavLink>
             </Box>
-            <Box sx={{ display: { xs: "flex", md: "none" } }}>
-              <IconButton
-                size="large"
-                // aria-label="show more"
-                // aria-controls={mobileMenuId}
-                aria-haspopup="true"
-                color="inherit"
-              >
-                <MoreIcon />
-              </IconButton>
-            </Box>
           </Toolbar>
         </AppBar>
-        {/* {renderMobileMenu}
-        {renderMenu} */}
       </Box>
     </>
   );

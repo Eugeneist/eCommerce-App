@@ -25,7 +25,13 @@ function Copyright() {
           height: "2px",
           backgroundColor: "#fff",
           top: "10px",
-          left: "555px",
+          left: "38%",
+        },
+        "@media (max-width: 600px)": {
+          "&::after": {
+            left: "0",
+            top: "0",
+          },
         },
       }}
       variant="body2"
@@ -70,7 +76,6 @@ const Footer = () => {
         <Container maxWidth="xl">
           <box
             style={{
-              width: "100%",
               display: "flex",
               alignItems: "baseline",
               justifyContent: "space-between",

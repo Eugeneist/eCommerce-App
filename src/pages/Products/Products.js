@@ -78,8 +78,9 @@ const Products = () => {
               display: "flex",
               flexDirection: "column",
               padding: "5px 20px 5px 0",
-              // position: "sticky",
-              // top: "70px",
+              "@media (max-width: 900px)": {
+                width: "100px",
+              },
             }}
           >
             <Typography
@@ -87,6 +88,9 @@ const Products = () => {
                 margin: "0 0 15px",
                 color: "#14213d",
                 textTransform: "uppercase",
+                "@media (max-width: 900px)": {
+                  fontSize: "15px",
+                },
               }}
               gutterBottom
               variant="h5"
@@ -101,6 +105,9 @@ const Products = () => {
                 justifyContent: "left",
                 padding: "10px 100px 10px 20px",
                 color: "#14213d",
+                "@media (max-width: 900px)": {
+                  fontSize: "12px",
+                },
               }}
             >
               All
@@ -113,6 +120,9 @@ const Products = () => {
                 justifyContent: "left",
                 padding: "10px 100px 10px 20px",
                 color: "#14213d",
+                "@media (max-width: 900px)": {
+                  fontSize: "12px",
+                },
               }}
             >
               Smartphones
@@ -125,6 +135,9 @@ const Products = () => {
                 justifyContent: "left",
                 padding: "10px 100px 10px 20px",
                 color: "#14213d",
+                "@media (max-width: 900px)": {
+                  fontSize: "12px",
+                },
               }}
             >
               Laptops
@@ -137,6 +150,9 @@ const Products = () => {
                 justifyContent: "left",
                 padding: "10px 100px 10px 20px",
                 color: "#14213d",
+                "@media (max-width: 900px)": {
+                  fontSize: "12px",
+                },
               }}
             >
               Fragrances
@@ -148,8 +164,10 @@ const Products = () => {
                 display: "flex",
                 justifyContent: "left",
                 padding: "10px 100px 10px 20px",
-
                 color: "#14213d",
+                "@media (max-width: 900px)": {
+                  fontSize: "12px",
+                },
               }}
             >
               Skin Care
@@ -162,6 +180,9 @@ const Products = () => {
                 justifyContent: "left",
                 padding: "10px 100px 10px 20px",
                 color: "#14213d",
+                "@media (max-width: 900px)": {
+                  fontSize: "12px",
+                },
               }}
             >
               Groceries
@@ -174,6 +195,9 @@ const Products = () => {
                 justifyContent: "left",
                 padding: "10px 100px 10px 20px",
                 color: "#14213d",
+                "@media (max-width: 900px)": {
+                  fontSize: "12px",
+                },
               }}
             >
               Decoration
@@ -186,6 +210,9 @@ const Products = () => {
                 justifyContent: "left",
                 padding: "10px 100px 10px 20px",
                 color: "#14213d",
+                "@media (max-width: 900px)": {
+                  fontSize: "12px",
+                },
               }}
             >
               Furniture
@@ -198,6 +225,9 @@ const Products = () => {
                 justifyContent: "left",
                 padding: "10px 100px 10px 20px",
                 color: "#14213d",
+                "@media (max-width: 900px)": {
+                  fontSize: "12px",
+                },
               }}
             >
               Tops
@@ -210,6 +240,9 @@ const Products = () => {
                 justifyContent: "left",
                 padding: "10px 100px 10px 20px",
                 color: "#14213d",
+                "@media (max-width: 900px)": {
+                  fontSize: "12px",
+                },
               }}
             >
               W-s Dresses
@@ -222,6 +255,9 @@ const Products = () => {
                 justifyContent: "left",
                 padding: "10px 100px 10px 20px",
                 color: "#14213d",
+                "@media (max-width: 900px)": {
+                  fontSize: "12px",
+                },
               }}
             >
               W-s Shoes
@@ -234,6 +270,9 @@ const Products = () => {
                 justifyContent: "left",
                 padding: "10px 100px 10px 20px",
                 color: "#14213d",
+                "@media (max-width: 900px)": {
+                  fontSize: "12px",
+                },
               }}
             >
               M-s Shirts
@@ -246,6 +285,9 @@ const Products = () => {
                 justifyContent: "left",
                 padding: "10px 100px 10px 20px",
                 color: "#14213d",
+                "@media (max-width: 900px)": {
+                  fontSize: "12px",
+                },
               }}
             >
               M-s Shoes
@@ -258,6 +300,9 @@ const Products = () => {
                 justifyContent: "left",
                 padding: "10px 100px 10px 20px",
                 color: "#14213d",
+                "@media (max-width: 900px)": {
+                  fontSize: "12px",
+                },
               }}
             >
               M-s Watches
@@ -270,6 +315,9 @@ const Products = () => {
                 justifyContent: "left",
                 padding: "10px 100px 10px 20px",
                 color: "#14213d",
+                "@media (max-width: 900px)": {
+                  fontSize: "12px",
+                },
               }}
             >
               W-s Watches
@@ -282,6 +330,9 @@ const Products = () => {
                 justifyContent: "left",
                 padding: "10px 100px 10px 20px",
                 color: "#14213d",
+                "@media (max-width: 900px)": {
+                  fontSize: "12px",
+                },
               }}
             >
               W-s Bags
@@ -294,6 +345,9 @@ const Products = () => {
                 justifyContent: "left",
                 padding: "10px 100px 10px 20px",
                 color: "#14213d",
+                "@media (max-width: 900px)": {
+                  fontSize: "12px",
+                },
               }}
             >
               Jewellery
@@ -306,6 +360,9 @@ const Products = () => {
                 justifyContent: "left",
                 padding: "10px 100px 10px 20px",
                 color: "#14213d",
+                "@media (max-width: 900px)": {
+                  fontSize: "12px",
+                },
               }}
             >
               Sunglasses
@@ -318,6 +375,9 @@ const Products = () => {
                 justifyContent: "left",
                 padding: "10px 100px 10px 20px",
                 color: "#14213d",
+                "@media (max-width: 900px)": {
+                  fontSize: "12px",
+                },
               }}
             >
               Automotive
@@ -330,6 +390,9 @@ const Products = () => {
                 justifyContent: "left",
                 padding: "10px 100px 10px 20px",
                 color: "#14213d",
+                "@media (max-width: 900px)": {
+                  fontSize: "12px",
+                },
               }}
             >
               Motorcycles
@@ -342,6 +405,9 @@ const Products = () => {
                 justifyContent: "left",
                 padding: "10px 100px 10px 20px",
                 color: "#14213d",
+                "@media (max-width: 900px)": {
+                  fontSize: "12px",
+                },
               }}
             >
               Lighting

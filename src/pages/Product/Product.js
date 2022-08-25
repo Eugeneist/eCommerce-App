@@ -81,6 +81,7 @@ const Product = () => {
         height: "100%",
         backgroundColor: "#e5e5e5",
         textAlign: "left",
+        padding: "10px",
       }}
       maxWidth="xl"
     >
@@ -108,11 +109,21 @@ const Product = () => {
           padding: "10px 10px 100px 10px",
           backgroundColor: "#e5e5e5",
           margin: "auto",
+          "@media (max-width: 600px)": {
+            display: "flex",
+            flexDirection: "column",
+          },
         }}
         maxWidth="lg"
       >
         <Box>
-          <img src={product.thumbnail} alt={product.title}></img>
+          <img
+            style={{
+              width: "90%",
+            }}
+            src={product.thumbnail}
+            alt={product.title}
+          ></img>
         </Box>
         <Box
           sx={{
