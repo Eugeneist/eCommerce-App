@@ -6,3 +6,4 @@ export { Cart } from "./Cart";
 export { Favorite } from "./Favorite";
 export { DialogWindow } from "./DialogWindow";
 export { Form } from "./Form";
+export { SearchComponent } from "./SearchComponent";

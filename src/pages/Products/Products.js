@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { axios } from "../../helpers";
+import "../../App.css";
 import LinearProgress from "@mui/material/LinearProgress";
 import Stack from "@mui/material/Stack";
 import Alert from "@mui/material/Alert";
@@ -71,8 +72,10 @@ const Products = () => {
       maxWidth="xl"
     >
       <ImageCarousel />
-      <Box sx={{ display: "flex", paddingBottom: "30px" }}>
-        <Box sx={{ position: "relative" }}>
+      <Box
+        sx={{ display: "flex", paddingBottom: "30px", position: "relative" }}
+      >
+        <Box>
           <Box
             sx={{
               display: "flex",
@@ -418,7 +421,7 @@ const Products = () => {
         <Grid
           container
           spacing={{ xs: 3, md: 3 }}
-          columns={{ xs: 2, sm: 12, md: 16 }}
+          columns={{ xs: 2, sm: 6, md: 16 }}
           sx={{ alignContent: "center" }}
         >
           {filter.map((product) => (

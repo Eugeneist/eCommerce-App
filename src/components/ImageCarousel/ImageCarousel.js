@@ -32,7 +32,7 @@ const ImageCarousel = () => {
 const Item = ({ imgPath }) => {
   return (
     <Paper sx={{ backgroundColor: "transparent", boxShadow: "none" }}>
-      <img width="1470" height="460" src={`${imgPath}`} alt={`${imgPath}`} />
+      <img width="100%" height="auto" src={`${imgPath}`} alt={`${imgPath}`} />
     </Paper>
   );
 };

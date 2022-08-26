@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import Link from "@mui/material/Link";
+import Button from "@mui/material/Button";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
@@ -55,6 +56,15 @@ function Copyright() {
   );
 }
 
+let rootElement = document.documentElement;
+
+function scrollToTop() {
+  rootElement.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+}
+
 const Footer = () => {
   return (
     <Box
@@ -81,17 +91,48 @@ const Footer = () => {
               justifyContent: "space-between",
             }}
           >
-            <NavLink to="/">
-              <LocalMallIcon
+            <Box sx={{ display: "flex", alignItems: "center" }}>
+              <NavLink to="/">
+                <LocalMallIcon
+                  sx={{
+                    color: "#fff",
+                    "&:hover": {
+                      color: "#fca311",
+                      opacity: [0.9, 0.8, 0.7],
+                    },
+                  }}
+                />
+              </NavLink>
+              <Button
+                onClick={scrollToTop}
+                className="scrollToTopBtn"
                 sx={{
+                  display: "flex",
+                  width: "80px",
+                  height: "80px",
+                  justifyContent: "left",
+                  marginLeft: "50px",
+                  padding: "10px",
+                  backgroundColor: "#14213d",
                   color: "#fff",
+                  border: "1px solid #fff",
+                  borderRadius: "50%",
+                  position: "sticky",
+                  top: "20px",
                   "&:hover": {
-                    color: "#fca311",
+                    backgroundColor: "#fca311",
+                    border: "1px solid #fca311",
+                    color: "#000",
                     opacity: [0.9, 0.8, 0.7],
                   },
+                  "@media (max-width: 900px)": {
+                    fontSize: "12px",
+                  },
                 }}
-              />
-            </NavLink>
+              >
+                GO TO TOP
+              </Button>
+            </Box>
             <TableBody>
               <TableRow>
                 <TableCell align="right" sx={{ borderBottom: "none" }}>

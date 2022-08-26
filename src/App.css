@@ -16,6 +16,14 @@ html, body, #root, .App {
 
 }
 
+.search-list {
+  visibility: hidden;
+}
+
+.search-list_active{
+  visibility: visible;
+}
+
 
 
 @media (prefers-reduced-motion: no-preference) {
