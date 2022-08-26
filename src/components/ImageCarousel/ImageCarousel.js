@@ -5,7 +5,7 @@ import { Paper } from "@mui/material";
 const ImageCarousel = () => {
   const banners = [
     {
-      imgPath: "https://i.ibb.co/4m0Hfgq/b.jpg",
+      imgPath: "https://i.ibb.co/m4zwf8C/b2.jpg",
     },
     {
       imgPath: "https://i.ibb.co/BVdjm0n/a.jpg",

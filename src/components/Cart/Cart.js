@@ -16,6 +16,7 @@ import Paper from "@mui/material/Paper";
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 import Alert from "@mui/material/Alert";
+import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import ClearIcon from "@mui/icons-material/Clear";
@@ -183,7 +184,17 @@ const Cart = () => {
               <TableCell align="center">
                 ${(product.price * product.amount).toFixed(2)}
               </TableCell>
-              <TableCell align="right">
+              <TableCell
+                sx={{
+                  "@media (max-width: 900px)": {
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    borderBottom: "2px solid #000",
+                  },
+                }}
+                align="right"
+              >
                 <Button
                   color="secondary"
                   onClick={() => deleteProduct(product)}
@@ -205,7 +216,7 @@ const Cart = () => {
       </Table>
       <Typography
         sx={{
-          textAlign: "right",
+          textAlign: "left",
           fontWeight: "bold",
           padding: "30px 100px 30px 30px",
           display: "flex",
@@ -213,14 +224,15 @@ const Cart = () => {
           "@media (max-width: 900px)": {
             display: "flex",
             flexDirection: "column",
-            alignItems: "center",
+            alignItems: "left",
+            justifyContent: "left",
           },
         }}
         gutterBottom
         variant="h5"
         component="div"
       >
-        <box>
+        <Box>
           <NavLink
             to="/"
             style={{ textDecoration: "none", color: "fff", margin: "20px" }}
@@ -260,7 +272,7 @@ const Cart = () => {
           >
             Clear Cart
           </Button>
-        </box>
+        </Box>
         <Grid
           sx={{
             textAlign: "center",

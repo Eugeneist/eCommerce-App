@@ -108,15 +108,14 @@ const Footer = () => {
                 className="scrollToTopBtn"
                 sx={{
                   display: "flex",
-                  width: "80px",
-                  height: "80px",
-                  justifyContent: "left",
+                  minWidth: "120px",
+                  justifyContent: "center",
                   marginLeft: "50px",
+                  marginBottom: "10px",
                   padding: "10px",
                   backgroundColor: "#14213d",
                   color: "#fff",
                   border: "1px solid #fff",
-                  borderRadius: "50%",
                   position: "sticky",
                   top: "20px",
                   "&:hover": {
