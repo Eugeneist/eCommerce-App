@@ -2,27 +2,28 @@ import Box from "@mui/material/Box";
 import { SearchItem } from "../SearchItem";
 import { NavLink } from "react-router-dom";
 
-const SearchList = ({ products, setSelected }) => {
+const SearchList = ({ products, selected }) => {
   const handleClose = () => {
-    setSelected(false);
+    selected(false);
   };
 
   return (
     <Box sx={{ overflowY: "scroll", height: "70vh" }}>
-      {products.map((product) => {
+      {products.map(({ id, title, price }) => {
         return (
           <NavLink
             onClick={handleClose}
-            key={product.id}
-            product={product}
+            key={id}
+            title={title}
+            price={price}
             style={{
               textDecoration: "none",
               fontFamily: "Roboto",
               color: "#14213d",
             }}
-            to={`/product/${product.id}`}
+            to={`/product/${id}`}
           >
-            <SearchItem key={product.id} product={product} />
+            <SearchItem key={id} title={title} price={price} />
           </NavLink>
         );
       })}

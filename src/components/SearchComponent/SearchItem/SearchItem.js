@@ -1,7 +1,7 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 
-const SearchItem = ({ product }) => {
+const SearchItem = ({ title, price }) => {
   return (
     <Box
       sx={{
@@ -27,7 +27,7 @@ const SearchItem = ({ product }) => {
         variant="subtitle1"
         component="div"
       >
-        {product.title}
+        {title}
       </Typography>
       <Typography
         sx={{
@@ -39,7 +39,7 @@ const SearchItem = ({ product }) => {
         variant="subtitle1"
         component="div"
       >
-        ${product.price}
+        ${price}
       </Typography>
     </Box>
   );
