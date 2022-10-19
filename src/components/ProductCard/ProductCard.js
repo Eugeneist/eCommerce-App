@@ -43,7 +43,7 @@ const ProductCard = ({ image, title, rating, price, product }) => {
   const favorite = useSelector((state) => state.favoriteReducer);
 
   useEffect(() => {
-    if (favorite.includes(product)) {
+    if (favorite.find((fav) => fav.id === product.id)) {
       setFavoriteProduct(true);
     }
   }, [favorite, product]);
